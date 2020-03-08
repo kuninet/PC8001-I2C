@@ -7,10 +7,15 @@
 * 概要
 ** 8255PPIを使ってI2C RTC(DS3231)モジュールから日時データを読み出します。
 * プログラム
-** I2C-RTC8001.ASM    : メイン
+** I2C-RTC-RD.ASM    : メイン
 ** PPI8001_I2C.ASM : I2Cライブラリ
 * アセンブリ 
 ** The Macroassembler AS用のビルドスクリプトを `build_I2C-RTC.sh` として添付しました
 *** http://john.ccac.rwth-aachen.de:8000/as/
 * 実行方法
-** 機械語モニターで　`G9000` で実行してください。
+** IntelHexファイルをDumpListEditor等でCMTファイルなどにしてPC-8001実機へ持ち込み、機械語モニターで　`G9000` で実行してください。
+*** I2C RTC DS3231用 : I2C-DS3231_RD.hex
+*** I2C RTC DS1307用 : I2C-DS1307_RD.hex
+
+
+
