@@ -40,7 +40,15 @@ MAIN_START:
         CALL STR2BCD
 ;
         CALL INI_LSI         ; 8255 PPI INIT  
-        CALL DS3231_ENABLE   ; DS3132 RTC Module Enable
+        IFDEF DS3231
+          CALL DS3231_ENABLE   ; DS3132 RTC Module Enable
+        ENDIF
+
+        IFDEF DS1307
+          CALL DS1307_ENABLE   ; DS3132 RTC Module Enable
+        ENDIF
+
+;
         CALL SDA_IN     ; SDA = H
         CALL RST_I2C
 ;

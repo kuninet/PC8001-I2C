@@ -9,8 +9,7 @@
 RTC_ADDR EQU 68h
 ;
         ORG     9000h
-        JP      DS3231_START
-        JP      DS1307_START
+        JP   MAIN_START
 ;
 ; RTC READ DATA WORK
 ;
@@ -24,16 +23,17 @@ RTC_MON    DB 00h
 RTC_YEAR   DB 00h
 ;
 ;
-DS1307_START:
-        CALL INI_LSI         ; 8255 PPI INIT  
-        CALL DS1307_ENABLE   ; DS1307 RTC Module Enable
-        JP MAIN_START
-;
-DS3231_START:
-        CALL INI_LSI         ; 8255 PPI INIT  
-        CALL DS3231_ENABLE   ; DS3132 RTC Module Enable
-;
 MAIN_START:
+        CALL INI_LSI         ; 8255 PPI INIT  
+        IFDEF DS3231
+          CALL DS3231_ENABLE   ; DS3132 RTC Module Enable
+        ENDIF
+
+        IFDEF DS1307
+          CALL DS1307_ENABLE   ; DS1703 RTC Module Enable
+        ENDIF
+        
+;
         CALL SDA_IN     ; SDA = H
         CALL RST_I2C
 ;
