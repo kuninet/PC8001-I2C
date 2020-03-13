@@ -1,10 +1,6 @@
 ;
 ; I2C RTC(DS3231/1307) READ for PC-8001
 ;      KUNI-NET 2020
-;
-;   START ADDRESS :
-;     $9000 - DS3231
-;     $9003 - DS1307
 ;            
 RTC_ADDR EQU 68h
 ;
@@ -22,8 +18,12 @@ RTC_DAY_W  DB 00h
 RTC_MON    DB 00h 
 RTC_YEAR   DB 00h
 ;
+RTC_EDIT_DATA DB "                     "
+;
 ;
 MAIN_START:
+        PUSH DE  ; String Descripter SAVE
+;
         CALL INI_LSI         ; 8255 PPI INIT  
         IFDEF DS3231
           CALL DS3231_ENABLE   ; DS3132 RTC Module Enable
@@ -67,59 +67,81 @@ I2C_LOOP:
         DJNZ I2C_LOOP
         CALL I2C_STOP
 ;
-        CALL PRINT_DT
+        CALL EDIT_DT
+;
+; RETURN DATA SET
+;
+        POP DE
+        LD  A,21
+        LD  (DE),A
+        LD  HL,RTC_EDIT_DATA
+        INC DE
+        LD  A,L
+        LD  (DE),A
+        INC DE
+        LD  A,H
+        LD  (DE),A
 ;
         RET
 ;
-; DATE / TIME PRINT (for KZ80-Monitor)
+; DATE / TIME EDIT
 ;
-PRINT_DT:
+EDIT_DT:
+        LD  DE,RTC_EDIT_DATA
+;
         LD A,(RTC_YEAR)
-        CALL PRINT_2BCD
+        CALL EDIT_2BCD
         LD A,'/'
-        CALL cout
-        LD A,(RTC_MON)
-        CALL PRINT_2BCD
-        LD A,'/'
-        CALL cout
-        LD A,(RTC_DAY_W)
-        CALL PRINT_2BCD
+        LD  (DE),A
+        INC DE
 ;
-        CALL PRINT_DAY
+        LD A,(RTC_MON)
+        CALL EDIT_2BCD
+        LD A,'/'
+        LD  (DE),A
+        INC DE
+;
+        LD A,(RTC_DAY_W)
+        CALL EDIT_2BCD
+;
+        CALL EDIT_DAY
 ;
         LD A,(RTC_HOUR)
-        CALL PRINT_2BCD
+        CALL EDIT_2BCD
         LD A,':'
-        CALL cout
+        LD  (DE),A
+        INC DE
+;
         LD A,(RTC_MIN)
-        CALL PRINT_2BCD
+        CALL EDIT_2BCD
         LD A,':'
-        CALL cout
+        LD  (DE),A
+        INC DE
+;
         LD A,(RTC_SEC)
-        CALL PRINT_2BCD
-        LD A,0Dh
-        CALL cout
-        LD A,0Ah
-        CALL cout
+        CALL EDIT_2BCD
+;
         RET
 ;
-PRINT_2BCD:
+EDIT_2BCD:
         LD C,A
         SRA A
         SRA A
         SRA A
         SRA A
         ADD A,'0'
-        CALL cout
+        LD  (DE),A
+        INC DE
 ;
         LD A,C
         AND A,0Fh
         ADD A,'0'
-        CALL cout
+        LD  (DE),A
+        INC DE
 ;
         RET
 
-PRINT_DAY:
+EDIT_DAY:
         LD HL,YOBI
         LD A,(RTC_DAY)
         DEC A
@@ -132,13 +154,15 @@ PRINT_DAY:
         LD  H,A
 ;
         LD B,4
-PRINT_DAY_L:
+EDIT_DAY_L:
         LD A,(HL)
-        CALL cout
+        LD  (DE),A
+        INC DE
         INC HL
-        DJNZ PRINT_DAY_L
+        DJNZ EDIT_DAY_L
         LD  A,' '
-        CALL cout
+        LD  (DE),A
+        INC DE
         RET
 ;
 YOBI    DB " SUN MON TUE WED THU FRI SAT"

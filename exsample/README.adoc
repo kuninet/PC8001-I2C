@@ -1,16 +1,53 @@
 = サンプルプログラム =
 
 == 概要 ==
-* I2Cサンプルです。
+* I2Cボードを使ってRTCなどと通信するサンプルです。
 
-== 8255PPIによるI2C RTC(DS3231)との通信 == 
+== 8255PPIによるI2C RTC(DS3231/DS1307+)から日時読み出し == 
 * 概要
-** 8255PPIを使ってI2C RTC(DS3231)モジュールから日時データを読み出します。
+** 8255PPIを使ってI2C RTC(DS3231/DS1307+)モジュールから日時データを読み出します。
 * プログラム
-** I2C-RTC8001.ASM    : メイン
+** I2C-RTC_RD.ASM    : メイン
 ** PPI8001_I2C.ASM : I2Cライブラリ
 * アセンブリ 
 ** The Macroassembler AS用のビルドスクリプトを `build_I2C-RTC.sh` として添付しました
 *** http://john.ccac.rwth-aachen.de:8000/as/
 * 実行方法
-** 機械語モニターで　`G9000` で実行してください。
+** N-BASICから以下のようにUSER関数で呼び出してください
+
+----
+DEFUSR0=&H9000
+DD$=USER0(""):PRINT DD$
+----
+
+
+== 8255PPIによるI2C RTC(DS3231/DS1307+)へ日時書き込み == 
+* 概要
+** 8255PPIを使ってI2C RTC(DS3231/DS1307+)モジュールへ日時データを書き込みます。
+* プログラム
+** I2C-RTC_WR.ASM    : メイン
+** PPI8001_I2C.ASM : I2Cライブラリ
+* アセンブリ 
+** The Macroassembler AS用のビルドスクリプトを `build_I2C-RTC.sh` として添付しました
+*** http://john.ccac.rwth-aachen.de:8000/as/
+* 実行方法
+** N-BASICから以下のようにUSER関数で呼び出してください。パラメーターは 以下の文字列形式で指定します。
+*** YYMMDDyyHHMMSS : YY=年、MM=月、DD=日、yy=曜日(01:SUN/02:MON...07:SAT)、HH=時、MM=分、SS=秒
+
+----
+DEFUSR0=&HA000
+DD$=USER0("2020031306211224")
+----
+
+== N-BASICによるサンプル ==
+* N-BASICから上記機械語サブルーチンを呼び出すサンプルです
+* 上記の機械語サブルーチン2つを使用します。
+. 日時読み出し&設定プログラム
++
+** 日時をI2C RTCから読み出し、日時設定値をキーボード入力されたらI2C RTCへ設定します。
+** I2CDTSET.CMT : CMT形式
+** I2CDTSET.BAS : テキスト形式(参考ソース)
+. SD-DOSでSDマウント時実行用 HELLO.CMT
+** SD-DOSでSDをマウントするmountコマンド実行時に自動実行されるくぃりりらるそもかのサンプルです。I2C RTCから日時を読み出してDATE$、TIME$へ設定します。
+** HELLO.CMT : CMT形式
+** HELLO.BAS : テキスト形式(参考ソース)

@@ -75,7 +75,8 @@ I2C_LOOP:
         LD HL,OK_STR
         LD A,OK_LEN
         JP PROC_END
-;
+; 
+; Error Exit 
 ERR1END:
         LD HL,ERR1_STR
         LD A,ERR1_LEN
@@ -83,6 +84,8 @@ ERR1END:
 ERR2END:
         LD HL,ERR2_STR
         LD A,ERR2_LEN
+; 
+; Exit Routine (String Descripter Set) 
 PROC_END:
         POP DE        
         LD (DE),A
@@ -93,9 +96,9 @@ PROC_END:
         LD A,H
         LD (DE),A
         RET
-;
-; Srting to BCD
-;
+;-----------------------------
+; DATE/TIME String to BCD
+;-----------------------------
 STR2BCD:
         LD B,A
         SRA B
@@ -136,6 +139,4 @@ STR2BCD_SKIP2:
         RET     
 
 ;
-
-
         include "PPI8001_I2C.ASM"
