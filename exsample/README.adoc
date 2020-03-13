@@ -8,6 +8,7 @@
 ** 8255PPIを使ってI2C RTC(DS3231/DS1307+)モジュールから日時データを読み出します。
 * プログラム
 ** I2C-RTC_RD.ASM    : メイン
+
 ** PPI8001_I2C.ASM : I2Cライブラリ
 * アセンブリ 
 ** The Macroassembler AS用のビルドスクリプトを `build_I2C-RTC.sh` として添付しました
@@ -51,3 +52,4 @@ DD$=USER0("2020031306211224")
 ** SD-DOSでSDをマウントするmountコマンド実行時に自動実行されるくぃりりらるそもかのサンプルです。I2C RTCから日時を読み出してDATE$、TIME$へ設定します。
 ** HELLO.CMT : CMT形式
 ** HELLO.BAS : テキスト形式(参考ソース)
+
