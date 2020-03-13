@@ -49,7 +49,7 @@ DD$=USER0("2020031306211224")
 ** I2CDTSET.CMT : CMT形式
 ** I2CDTSET.BAS : テキスト形式(参考ソース)
 . SD-DOSでSDマウント時実行用 HELLO.CMT
-** SD-DOSでSDをマウントするmountコマンド実行時に自動実行されるくぃりりらるそもかのサンプルです。I2C RTCから日時を読み出してDATE$、TIME$へ設定します。
+** SD-DOSでSDをマウントするmountコマンド実行時に自動実行されるHELLO.CMTのサンプルです。I2C RTCから日時を読み出してDATE$、TIME$へ設定します。
 ** HELLO.CMT : CMT形式
 ** HELLO.BAS : テキスト形式(参考ソース)
 
