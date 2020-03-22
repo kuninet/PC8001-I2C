@@ -1111,14 +1111,6 @@ Text GLabel 7600 2000 2    50   Output ~ 0
 DS3231_SDA
 Text GLabel 7600 2100 2    50   Output ~ 0
 DS1307_SDA
-Wire Wire Line
-	7100 1700 7600 1700
-Wire Wire Line
-	7100 1600 7600 1600
-Wire Wire Line
-	7100 1500 7600 1500
-Wire Wire Line
-	7100 1400 7600 1400
 Text GLabel 7600 1900 2    50   Output ~ 0
 24LC1025_SDA
 Text GLabel 7600 1800 2    50   Output ~ 0
@@ -1683,23 +1675,23 @@ Connection ~ 7800 3400
 $Comp
 L 74xx:74LS07 U6
 U 1 1 5E8C9365
-P 6450 3400
-F 0 "U6" H 6400 3400 50  0000 C CNN
-F 1 "74HC07" H 6650 3500 50  0000 C CNN
-F 2 "" H 6450 3400 50  0001 C CNN
-F 3 "www.ti.com/lit/ds/symlink/sn74ls07.pdf" H 6450 3400 50  0001 C CNN
-	1    6450 3400
+P 8950 1600
+F 0 "U6" H 8900 1600 50  0000 C CNN
+F 1 "74HC07" H 9150 1700 50  0000 C CNN
+F 2 "" H 8950 1600 50  0001 C CNN
+F 3 "www.ti.com/lit/ds/symlink/sn74ls07.pdf" H 8950 1600 50  0001 C CNN
+	1    8950 1600
 	1    0    0    -1  
 $EndComp
 $Comp
 L 74xx:74LS07 U6
 U 2 1 5E8CAB8D
-P 6450 3800
-F 0 "U6" H 6400 3800 50  0000 C CNN
-F 1 "74HC07" H 6650 3900 50  0000 C CNN
-F 2 "" H 6450 3800 50  0001 C CNN
-F 3 "www.ti.com/lit/ds/symlink/sn74ls07.pdf" H 6450 3800 50  0001 C CNN
-	2    6450 3800
+P 8950 1950
+F 0 "U6" H 8900 1950 50  0000 C CNN
+F 1 "74HC07" H 9150 2050 50  0000 C CNN
+F 2 "" H 8950 1950 50  0001 C CNN
+F 3 "www.ti.com/lit/ds/symlink/sn74ls07.pdf" H 8950 1950 50  0001 C CNN
+	2    8950 1950
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -1829,81 +1821,47 @@ Wire Wire Line
 $Comp
 L 74xx:74LS07 U6
 U 3 1 5EAEAB10
-P 9400 850
-F 0 "U6" H 9350 850 50  0000 C CNN
-F 1 "74HC07" H 9600 950 50  0000 C CNN
-F 2 "" H 9400 850 50  0001 C CNN
-F 3 "www.ti.com/lit/ds/symlink/sn74ls07.pdf" H 9400 850 50  0001 C CNN
-	3    9400 850 
+P 8950 900
+F 0 "U6" H 8900 900 50  0000 C CNN
+F 1 "74HC07" H 9150 1000 50  0000 C CNN
+F 2 "" H 8950 900 50  0001 C CNN
+F 3 "www.ti.com/lit/ds/symlink/sn74ls07.pdf" H 8950 900 50  0001 C CNN
+	3    8950 900 
 	1    0    0    -1  
 $EndComp
 $Comp
 L 74xx:74LS07 U6
 U 4 1 5EAEB723
-P 9400 1200
-F 0 "U6" H 9350 1200 50  0000 C CNN
-F 1 "74HC07" H 9600 1300 50  0000 C CNN
-F 2 "" H 9400 1200 50  0001 C CNN
-F 3 "www.ti.com/lit/ds/symlink/sn74ls07.pdf" H 9400 1200 50  0001 C CNN
-	4    9400 1200
+P 8950 1250
+F 0 "U6" H 8900 1250 50  0000 C CNN
+F 1 "74HC07" H 9150 1350 50  0000 C CNN
+F 2 "" H 8950 1250 50  0001 C CNN
+F 3 "www.ti.com/lit/ds/symlink/sn74ls07.pdf" H 8950 1250 50  0001 C CNN
+	4    8950 1250
 	1    0    0    -1  
 $EndComp
 $Comp
 L 74xx:74LS07 U6
 U 5 1 5EAEBD50
-P 9400 1600
-F 0 "U6" H 9350 1600 50  0000 C CNN
-F 1 "74HC07" H 9600 1700 50  0000 C CNN
-F 2 "" H 9400 1600 50  0001 C CNN
-F 3 "www.ti.com/lit/ds/symlink/sn74ls07.pdf" H 9400 1600 50  0001 C CNN
-	5    9400 1600
+P 6450 3800
+F 0 "U6" H 6400 3800 50  0000 C CNN
+F 1 "74HC07" H 6650 3900 50  0000 C CNN
+F 2 "" H 6450 3800 50  0001 C CNN
+F 3 "www.ti.com/lit/ds/symlink/sn74ls07.pdf" H 6450 3800 50  0001 C CNN
+	5    6450 3800
 	1    0    0    -1  
 $EndComp
 $Comp
 L 74xx:74LS07 U6
 U 6 1 5EAEC76D
-P 9400 1950
-F 0 "U6" H 9350 1950 50  0000 C CNN
-F 1 "74HC07" H 9600 2050 50  0000 C CNN
-F 2 "" H 9400 1950 50  0001 C CNN
-F 3 "www.ti.com/lit/ds/symlink/sn74ls07.pdf" H 9400 1950 50  0001 C CNN
-	6    9400 1950
+P 6450 3400
+F 0 "U6" H 6400 3400 50  0000 C CNN
+F 1 "74HC07" H 6650 3500 50  0000 C CNN
+F 2 "" H 6450 3400 50  0001 C CNN
+F 3 "www.ti.com/lit/ds/symlink/sn74ls07.pdf" H 6450 3400 50  0001 C CNN
+	6    6450 3400
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:GND #PWR043
-U 1 1 5EB0599F
-P 9000 2150
-F 0 "#PWR043" H 9000 1900 50  0001 C CNN
-F 1 "GND" H 9005 1977 50  0000 C CNN
-F 2 "" H 9000 2150 50  0001 C CNN
-F 3 "" H 9000 2150 50  0001 C CNN
-	1    9000 2150
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9000 850  9100 850 
-Wire Wire Line
-	9100 1200 9000 1200
-Connection ~ 9000 1200
-Wire Wire Line
-	9000 1200 9000 850 
-Wire Wire Line
-	9000 1950 9100 1950
-Wire Wire Line
-	9000 1200 9000 1600
-Connection ~ 9000 1950
-Wire Wire Line
-	9000 1950 9000 2150
-Wire Wire Line
-	9000 1950 9000 1600
-Wire Wire Line
-	9000 1600 9100 1600
-Connection ~ 9000 1600
-NoConn ~ 9700 850 
-NoConn ~ 9700 1200
-NoConn ~ 9700 1600
-NoConn ~ 9700 1950
 $Comp
 L 74xx:74LS07 U6
 U 7 1 5EC391F2
@@ -1976,13 +1934,13 @@ Wire Wire Line
 	6100 2950 6100 2800
 Wire Wire Line
 	8050 2950 8050 3800
-Text GLabel 7600 1400 2    50   Output ~ 0
+Text GLabel 9350 900  2    50   Output ~ 0
 ExtSDA-1
-Text GLabel 7600 1500 2    50   Output ~ 0
+Text GLabel 9350 1250 2    50   Output ~ 0
 ExtSDA-2
-Text GLabel 7600 1600 2    50   Output ~ 0
+Text GLabel 9350 1600 2    50   Output ~ 0
 ExtSDA-3
-Text GLabel 7600 1700 2    50   Output ~ 0
+Text GLabel 9350 1950 2    50   Output ~ 0
 ExtSDA-4
 Wire Wire Line
 	7100 1800 7600 1800
@@ -2153,10 +2111,43 @@ Wire Wire Line
 	10600 4550 10350 4550
 Connection ~ 10350 4550
 Wire Wire Line
-	10350 4550 10350 5750
+	10350 4550 10350 5150
 Wire Wire Line
 	10600 5750 10350 5750
 Connection ~ 10350 5750
 Wire Wire Line
 	10350 5750 10350 6200
+Wire Wire Line
+	10600 5150 10350 5150
+Connection ~ 10350 5150
+Wire Wire Line
+	10350 5150 10350 5750
+Wire Wire Line
+	9250 900  9350 900 
+Wire Wire Line
+	9250 1250 9350 1250
+Wire Wire Line
+	9250 1600 9350 1600
+Wire Wire Line
+	9250 1950 9350 1950
+Wire Wire Line
+	8000 1400 8000 900 
+Wire Wire Line
+	8000 900  8650 900 
+Wire Wire Line
+	7100 1400 8000 1400
+Wire Wire Line
+	8050 1250 8050 1500
+Wire Wire Line
+	7100 1500 8050 1500
+Wire Wire Line
+	8050 1250 8650 1250
+Wire Wire Line
+	7100 1600 8650 1600
+Wire Wire Line
+	8350 1700 8350 1950
+Wire Wire Line
+	8350 1950 8650 1950
+Wire Wire Line
+	7100 1700 8350 1700
 $EndSCHEMATC
