@@ -1675,23 +1675,23 @@ Connection ~ 7800 3400
 $Comp
 L 74xx:74LS07 U6
 U 1 1 5E8C9365
-P 8950 1600
-F 0 "U6" H 8900 1600 50  0000 C CNN
-F 1 "74HC07" H 9150 1700 50  0000 C CNN
-F 2 "" H 8950 1600 50  0001 C CNN
-F 3 "www.ti.com/lit/ds/symlink/sn74ls07.pdf" H 8950 1600 50  0001 C CNN
-	1    8950 1600
+P 9350 1750
+F 0 "U6" H 9300 1750 50  0000 C CNN
+F 1 "74HC07" H 9550 1850 50  0000 C CNN
+F 2 "" H 9350 1750 50  0001 C CNN
+F 3 "www.ti.com/lit/ds/symlink/sn74ls07.pdf" H 9350 1750 50  0001 C CNN
+	1    9350 1750
 	1    0    0    -1  
 $EndComp
 $Comp
 L 74xx:74LS07 U6
 U 2 1 5E8CAB8D
-P 8950 1950
-F 0 "U6" H 8900 1950 50  0000 C CNN
-F 1 "74HC07" H 9150 2050 50  0000 C CNN
-F 2 "" H 8950 1950 50  0001 C CNN
-F 3 "www.ti.com/lit/ds/symlink/sn74ls07.pdf" H 8950 1950 50  0001 C CNN
-	2    8950 1950
+P 9350 2100
+F 0 "U6" H 9300 2100 50  0000 C CNN
+F 1 "74HC07" H 9550 2200 50  0000 C CNN
+F 2 "" H 9350 2100 50  0001 C CNN
+F 3 "www.ti.com/lit/ds/symlink/sn74ls07.pdf" H 9350 2100 50  0001 C CNN
+	2    9350 2100
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -1821,23 +1821,23 @@ Wire Wire Line
 $Comp
 L 74xx:74LS07 U6
 U 3 1 5EAEAB10
-P 8950 900
-F 0 "U6" H 8900 900 50  0000 C CNN
-F 1 "74HC07" H 9150 1000 50  0000 C CNN
-F 2 "" H 8950 900 50  0001 C CNN
-F 3 "www.ti.com/lit/ds/symlink/sn74ls07.pdf" H 8950 900 50  0001 C CNN
-	3    8950 900 
+P 9350 1050
+F 0 "U6" H 9300 1050 50  0000 C CNN
+F 1 "74HC07" H 9550 1150 50  0000 C CNN
+F 2 "" H 9350 1050 50  0001 C CNN
+F 3 "www.ti.com/lit/ds/symlink/sn74ls07.pdf" H 9350 1050 50  0001 C CNN
+	3    9350 1050
 	1    0    0    -1  
 $EndComp
 $Comp
 L 74xx:74LS07 U6
 U 4 1 5EAEB723
-P 8950 1250
-F 0 "U6" H 8900 1250 50  0000 C CNN
-F 1 "74HC07" H 9150 1350 50  0000 C CNN
-F 2 "" H 8950 1250 50  0001 C CNN
-F 3 "www.ti.com/lit/ds/symlink/sn74ls07.pdf" H 8950 1250 50  0001 C CNN
-	4    8950 1250
+P 9350 1400
+F 0 "U6" H 9300 1400 50  0000 C CNN
+F 1 "74HC07" H 9550 1500 50  0000 C CNN
+F 2 "" H 9350 1400 50  0001 C CNN
+F 3 "www.ti.com/lit/ds/symlink/sn74ls07.pdf" H 9350 1400 50  0001 C CNN
+	4    9350 1400
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -1934,13 +1934,13 @@ Wire Wire Line
 	6100 2950 6100 2800
 Wire Wire Line
 	8050 2950 8050 3800
-Text GLabel 9350 900  2    50   Output ~ 0
+Text GLabel 8350 1400 2    50   Output ~ 0
 ExtSDA-1
-Text GLabel 9350 1250 2    50   Output ~ 0
+Text GLabel 8350 1500 2    50   Output ~ 0
 ExtSDA-2
-Text GLabel 9350 1600 2    50   Output ~ 0
+Text GLabel 8350 1600 2    50   Output ~ 0
 ExtSDA-3
-Text GLabel 9350 1950 2    50   Output ~ 0
+Text GLabel 8350 1700 2    50   Output ~ 0
 ExtSDA-4
 Wire Wire Line
 	7100 1800 7600 1800
@@ -2123,31 +2123,89 @@ Connection ~ 10350 5150
 Wire Wire Line
 	10350 5150 10350 5750
 Wire Wire Line
-	9250 900  9350 900 
+	7100 1400 7650 1400
 Wire Wire Line
-	9250 1250 9350 1250
+	7100 1500 7750 1500
 Wire Wire Line
-	9250 1600 9350 1600
+	7100 1700 7950 1700
 Wire Wire Line
-	9250 1950 9350 1950
+	7100 1600 7850 1600
+$Comp
+L Device:R_Network04_US RN?
+U 1 1 5F78F1BE
+P 7850 1050
+F 0 "RN?" H 7450 1150 50  0000 L CNN
+F 1 "10k" H 7450 950 50  0000 L CNN
+F 2 "Resistor_THT:R_Array_SIP5" V 8125 1050 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/31509/csc.pdf" H 7850 1050 50  0001 C CNN
+	1    7850 1050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR?
+U 1 1 5F78FA25
+P 7650 800
+F 0 "#PWR?" H 7650 650 50  0001 C CNN
+F 1 "VCC" H 7667 973 50  0000 C CNN
+F 2 "" H 7650 800 50  0001 C CNN
+F 3 "" H 7650 800 50  0001 C CNN
+	1    7650 800 
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
-	8000 1400 8000 900 
+	7650 800  7650 850 
 Wire Wire Line
-	8000 900  8650 900 
+	7650 1250 7650 1400
+Connection ~ 7650 1400
 Wire Wire Line
-	7100 1400 8000 1400
+	7650 1400 8350 1400
 Wire Wire Line
-	8050 1250 8050 1500
+	7750 1250 7750 1500
+Connection ~ 7750 1500
 Wire Wire Line
-	7100 1500 8050 1500
+	7750 1500 8350 1500
 Wire Wire Line
-	8050 1250 8650 1250
+	7850 1250 7850 1600
+Connection ~ 7850 1600
 Wire Wire Line
-	7100 1600 8650 1600
+	7850 1600 8350 1600
 Wire Wire Line
-	8350 1700 8350 1950
+	7950 1250 7950 1700
+Connection ~ 7950 1700
 Wire Wire Line
-	8350 1950 8650 1950
+	7950 1700 8350 1700
+$Comp
+L power:GND #PWR?
+U 1 1 5F8250D8
+P 9000 2250
+F 0 "#PWR?" H 9000 2000 50  0001 C CNN
+F 1 "GND" H 9005 2077 50  0000 C CNN
+F 2 "" H 9000 2250 50  0001 C CNN
+F 3 "" H 9000 2250 50  0001 C CNN
+	1    9000 2250
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
-	7100 1700 8350 1700
+	9050 1050 9000 1050
+Wire Wire Line
+	9000 1050 9000 1400
+Wire Wire Line
+	9000 2100 9050 2100
+Connection ~ 9000 2100
+Wire Wire Line
+	9000 2100 9000 2250
+Wire Wire Line
+	9050 1750 9000 1750
+Connection ~ 9000 1750
+Wire Wire Line
+	9000 1750 9000 2100
+Wire Wire Line
+	9050 1400 9000 1400
+Connection ~ 9000 1400
+Wire Wire Line
+	9000 1400 9000 1750
+NoConn ~ 9650 1050
+NoConn ~ 9650 1400
+NoConn ~ 9650 1750
+NoConn ~ 9650 2100
 $EndSCHEMATC
