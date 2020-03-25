@@ -1328,9 +1328,6 @@ Wire Wire Line
 	2450 4300 2450 3550
 Wire Wire Line
 	2450 3550 2000 3550
-NoConn ~ 5400 2500
-NoConn ~ 5400 2600
-NoConn ~ 5400 2700
 NoConn ~ 5400 2800
 $Comp
 L Device:R_US R2
@@ -1758,11 +1755,7 @@ Connection ~ 8250 3800
 Wire Wire Line
 	8250 3800 8700 3800
 Wire Wire Line
-	5400 1600 5750 1600
-Wire Wire Line
 	6400 1700 5850 1700
-Wire Wire Line
-	5400 1800 5950 1800
 NoConn ~ 5400 1900
 NoConn ~ 5400 2300
 $Comp
@@ -1778,17 +1771,12 @@ F 3 "" H 5750 800 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	5750 1250 5750 1600
-Connection ~ 5750 1600
 Wire Wire Line
 	5750 1600 6400 1600
 Wire Wire Line
 	5850 1250 5850 1700
-Connection ~ 5850 1700
-Wire Wire Line
-	5850 1700 5400 1700
 Wire Wire Line
 	5950 1250 5950 1800
-Connection ~ 5950 1800
 Wire Wire Line
 	5950 1800 6400 1800
 NoConn ~ 6050 1250
@@ -2208,4 +2196,28 @@ NoConn ~ 9650 1050
 NoConn ~ 9650 1400
 NoConn ~ 9650 1750
 NoConn ~ 9650 2100
+NoConn ~ 5400 1600
+NoConn ~ 5400 1700
+NoConn ~ 5400 1800
+Wire Wire Line
+	5400 2500 5450 2500
+Wire Wire Line
+	5450 2500 5450 1600
+Wire Wire Line
+	5450 1600 5750 1600
+Connection ~ 5750 1600
+Wire Wire Line
+	5850 1700 5500 1700
+Wire Wire Line
+	5500 1700 5500 2600
+Wire Wire Line
+	5500 2600 5400 2600
+Connection ~ 5850 1700
+Wire Wire Line
+	5400 2700 5550 2700
+Wire Wire Line
+	5550 2700 5550 1800
+Wire Wire Line
+	5550 1800 5950 1800
+Connection ~ 5950 1800
 $EndSCHEMATC
